@@ -1,0 +1,72 @@
+<mat-toolbar color="primary">
+  Angular Material
+</mat-toolbar>
+
+
+<div class="basic-container">
+  <p>
+    <button mat-button (click)="reloadForm()">Switch toggle status & reload</button>
+    Controls should be {{isToggleEnabled?"enabled":"disabled"}}.
+  </p>
+  <form class="example-form" [formGroup]="formGroup">
+    <div class="">
+      Autocomplete:
+      <mat-form-field>
+        <input matInput type="text" formControlName="autocomplete" />
+      </mat-form-field>
+    </div>
+    <div>
+      Checkbox:
+      <mat-checkbox formControlName="checkbox">Check me!</mat-checkbox>
+    </div>
+    <div>
+      Datepicker:
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="datepicker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div>
+      Standard input:
+      <mat-form-field>
+        <input matInput formControlName="input" />
+      </mat-form-field>
+    </div>
+    <div>
+      Radio button:
+      <mat-radio-group formControlName="radio">
+        <mat-radio-button value="1">A</mat-radio-button>&nbsp;
+        <mat-radio-button value="2">B</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      Select:
+      <mat-form-field>
+        <mat-select formControlName="select">
+          <mat-option value="1">A</mat-option>
+          <mat-option value="2">B</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      Slider:
+      <mat-slider #data1 formControlName="slider" min="1" max="5" step="0.5"></mat-slider>
+      {{data1.value}}
+    </div>
+    <div>
+      Slide toggle:
+      <mat-slide-toggle formControlName="slideToggle">Slide Toggle</mat-slide-toggle>
+    </div>
+    <div>
+      <input type="submit" (click)="data()">
+    </div>
+    <div *ngIf="formData" >
+      <div>
+        {{formData | json}}
+      </div>
+    </div>
+  </form>
+
+
+</div>
