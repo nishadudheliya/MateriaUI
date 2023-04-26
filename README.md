@@ -1,3 +1,4 @@
+Date: 02 August 2020
 # Material2Demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
